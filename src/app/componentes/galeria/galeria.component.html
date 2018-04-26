@@ -1,0 +1,25 @@
+<div id="galeria">
+
+  <h1>{{title}}</h1>
+  <div class='botonesTamaño'>
+      <button (click)="tamano = tamano + 50" class="btn btn-success">Aumentar</button>
+      <button (click)="tamano = tamano - 50" class="btn btn-success">Disminuir</button>
+  </div>
+  <div>
+    <img [src]="imagenActual" [width]="tamano"/>
+  </div>
+    <button [disabled]="index<1" class="btn btn-primary" (click)="prev()">Anterior</button>
+    <button [disabled]="index>=imagenes.length-1" class="btn btn-primary" id="btnSiguiente" (click)="next()">Siguiente</button>
+  <div>
+  </div>
+  <div style="margin-top: 50px;">
+    <span [hidden]="paginator_ini <= 0" (click)=prevPagina()>Anterior</span>
+    <ng-container *ngFor="let img of imagenes | slice:paginator_ini:(paginator_fin); let i=index">
+      <img [class.seleccionada] = "(index - paginator_ini) ==i" [src]="img" width="75px;" style="margin-left:20px;" (click)="select(i+paginator_ini)"/>
+    </ng-container>
+
+    <span [hidden]="paginator_fin >= imagenes.length" (click)=sigPagina()>Siguiente</span>
+  </div>
+
+</div>
+

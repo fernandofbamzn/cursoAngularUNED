@@ -1,0 +1,32 @@
+<h2>Mis Heroes</h2>
+<table style="width:100%">
+  <tr>
+    <th style="background-color: grey">Heroe</th>
+    <th>Estado de ánimo</th>
+    <th style="background-color: grey">Borrar</th>
+  </tr>
+  <tr *ngFor="let her of heroes" (click)="nuevoHeroe=her;">
+    <td style="background-color: grey">{{her.name}}</td>
+    <td>{{her.emotion}}</td>
+    <td style="background-color: grey"><button (click)="borrarHeroe(her);">X</button></td>
+  </tr>
+</table>
+<div>
+    <h3>Nuevo miembro de SHIELD</h3>
+    <p>
+      <label for="name">Nombre:</label>
+      <input type="text" class="form-control" id="name" required minlength="15" [(ngModel)]="nuevoHeroe.name" name="name" #spy #name="ngModel">
+    </p>
+    <p>
+      <label for="alterEgo">Alter Ego:</label>
+      <input type="text" class="form-control" id="alterEgo" [(ngModel)]="nuevoHeroe.alterEgo" name="alterEgo">
+    </p>
+    <p>
+      <label for="emocion">Emoción:</label>
+      <select id="emocion" [(ngModel)]="nuevoHeroe.emotion" name="emocion">
+        <option *ngFor="let emocion of estados" value="{{emocion}}">{{emocion}}</option>
+      </select>
+    </p>
+
+    <p><button (click)="addHeroe()">Ingresar agente</button></p>
+  </div>

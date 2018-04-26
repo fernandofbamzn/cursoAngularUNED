@@ -1,0 +1,25 @@
+<input (keyup)="onKey($event)"/>
+{{ values }}
+<br />
+<input (keyup)="onKey2($event.key)"/>
+{{ values }}
+<br />
+<input (keyup)="onKey2($event.target.value)"/>
+{{ values }}
+<br />
+<input #varPlantilla (keyup)="0"/>
+<p>{{ varPlantilla.value }}</p>
+<br />
+<input #varPlantilla2 (keyup)="onKey2(varPlantilla2.value)"/>
+<p>{{ varPlantilla2.value }}</p>
+<br />
+<input #varPlantilla3 (keyup.enter)="1"/>
+<p>{{ varPlantilla3.value }}</p>
+<br />
+<input #varPlantilla4 (keyup.enter)="1" (blur)="1"/>
+<p>{{ varPlantilla4.value }}</p>
+<div>
+  <h3>Añadimos Heroes al hacer enter o perder el foco</h3>
+  <input #inputHeroe (keyup.enter)="onAddHeroe(inputHeroe.value); inputHeroe.value='';" (blur)="onAddHeroe(inputHeroe.value); inputHeroe.value='';">
+  <p>Añadido heroe: {{ inputHeroe.value }}</p>
+</div>

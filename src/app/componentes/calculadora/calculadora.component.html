@@ -1,0 +1,13 @@
+<h2>Calculadora Básica</h2>
+<section>
+  <p>Introduce los valores para las SuperCalculadora</p>
+  <p>
+    Valores: <input [(ngModel)]="numero1">
+    <ng-container ng-non-bindable><></ng-container>
+    <input [(ngModel)]="numero2">
+  </p>
+  <p>La suma de {{numero1}} y {{numero2}} = <ng-container ng-non-bindable>{{</ng-container>{{suma(numero1, numero2)}}<ng-container ng-non-bindable>}}</ng-container>  </p>
+  <p>La resta de {{numero1}} y {{numero2}} = <ng-container ng-non-bindable>{{</ng-container>{{resta(numero1, numero2)}}<ng-container ng-non-bindable>}}</ng-container>  </p>
+  <p>La multiplicación de {{numero1}} y {{numero2}} = <ng-container ng-non-bindable>{{</ng-container>{{multiplicacion(numero1, numero2)}}<ng-container ng-non-bindable>}}</ng-container>  </p>
+  <p>La división de {{numero1}} y {{numero2}} = <ng-container ng-non-bindable>{{</ng-container>{{division(numero1, numero2)}}<ng-container ng-non-bindable>}}</ng-container>  </p>
+</section>

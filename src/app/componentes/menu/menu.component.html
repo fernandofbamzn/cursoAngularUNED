@@ -1,0 +1,28 @@
+<!--<ul>
+  <li routerLinkActive="active">
+    <a routerLink="/heroes">Heroes</a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="/galeria">Galeria</a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="/prueba1">prueba</a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="/binding">Binding</a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="/pipes">Pipes</a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="/calculadora">Calculadora</a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="/template-variables">template-variables</a>
+  </li>
+</ul>-->
+<ul>
+  <li *ngFor="let entrada of routesApp" routerLinkActive="active">
+    <a routerLink="/{{entrada.path}}">{{entrada.path}}</a>
+  </li>
+</ul>

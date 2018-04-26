@@ -1,0 +1,17 @@
+<h3>Editar miembro de SHIELD</h3>
+    <p>
+      <label for="name">Nombre:</label>
+      <input type="text" class="form-control" id="name" required minlength="15" [(ngModel)]="Heroe.name" name="name" #spy #name="ngModel">
+    </p>
+    <p>
+      <label for="alterEgo">Alter Ego:</label>
+      <input type="text" class="form-control" id="alterEgo" [(ngModel)]="Heroe.alterEgo" name="alterEgo">
+    </p>
+    <p>
+      <label for="emocion">Emoción:</label>
+      <select id="emocion" [(ngModel)]="Heroe.emotion" name="emocion">
+        <option *ngFor="let emocion of estados" value="{{emocion}}">{{emocion}}</option>
+      </select>
+    </p>
+    <button (click)="eliminarHeroe()">Destituir Heroe</button>
+    <!--<p><button (click)="modHeroe()">Ingresar agente</button></p>-->

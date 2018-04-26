@@ -1,0 +1,18 @@
+<h2>Mis Heroes</h2>
+
+<table style="width:100%">
+  <tr>
+    <th style="background-color: grey">Heroe</th>
+    <th>Estado de ánimo</th>
+    <th style="background-color: grey">Borrar</th>
+  </tr>
+  <tr *ngFor="let her of heroes" (click)="nuevoHeroe=her;">
+    <td style="background-color: grey">{{her.name}}</td>
+    <td>{{her.emotion}}</td>
+    <td style="background-color: grey"><button (click)="borrarHeroe(her);">X</button></td>
+  </tr>
+</table>
+<app-detalle-mod-heroe [heroedetalle]="nuevoHeroe" (onEliminar)="borrarHeroe($event);"></app-detalle-mod-heroe>
+
+<h3>Heroes Recuperados en bruto</h3>
+{{ heroes | json }}

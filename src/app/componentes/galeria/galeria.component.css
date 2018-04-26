@@ -1,0 +1,3 @@
+div.botonesTamaño button {display:block; margin-left: auto; margin-right: auto;}
+button#btnSiguiente {float: right;}
+img.seleccionada { border:3px solid black}
